@@ -1,0 +1,15 @@
+{
+  "name": "lightbox",
+  "version": "1.0.0",
+  "description": "A lightbox plugin for wordpress created by BG",
+  "main": "lightbox.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "wp-scripts start"
+  },
+  "author": "Barney Gammond",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/scripts": "^16.1.4"
+  }
+}

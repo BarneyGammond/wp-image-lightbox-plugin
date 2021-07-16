@@ -49,15 +49,12 @@
 
 #lightbox .lb-nav-wrapper {
     color: white;
+    cursor: pointer;
 }
 
 #lightbox .lb-nav-wrapper.disabled {
     opacity: 0.5;
     pointer-events: none;
-}
-
-#lightbox .lb-nav-wrapper.right {
-    margin-right: 20px;
 }
 
 .blocks-gallery-item:hover {

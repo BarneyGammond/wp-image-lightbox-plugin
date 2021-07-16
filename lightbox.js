@@ -59,6 +59,7 @@ const buildLightbox = () => {
 
 	const setNewLbImage = (e) => {
 		lightbox.classList.add('active');
+		document.body.style.overflow = "hidden";
         activeImgCount = galleryItems.indexOf(e.currentTarget);
 		img.src = e.currentTarget.firstChild.src;
 		setLightboxInfo(e.currentTarget)
@@ -120,6 +121,7 @@ const buildLightbox = () => {
 	lightbox.addEventListener('click', e => {
 		if (e.target !== e.currentTarget) return;
 		lightbox.classList.remove('active');
+		document.body.style.overflow = "overlay";
 		activeImgCount = null;
 	});
 };

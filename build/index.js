@@ -1,1 +1,249 @@
-!function(e){var t={};function r(o){if(t[o])return t[o].exports;var n=t[o]={i:o,l:!1,exports:{}};return e[o].call(n.exports,n,n.exports,r),n.l=!0,n.exports}r.m=e,r.c=t,r.d=function(e,t,o){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},r.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.t=function(e,t){if(1&t&&(e=r(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(r.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var n in e)r.d(o,n,function(t){return e[t]}.bind(null,n));return o},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,"a",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p="",r(r.s=1)}([function(e,t){e.exports=window.wp.element},function(e,t,r){"use strict";r.r(t);var o=r(0);const{__:__}=wp.i18n,{addFilter:n}=wp.hooks,{Fragment:i}=wp.element,{InspectorControls:a}=wp.blockEditor,{PanelBody:l,TextControl:u,ToggleControl:s}=wp.components,{createHigherOrderComponent:c}=wp.compose;n("blocks.registerBlockType","bg-custom/add-works-text",(function(e,t){return"core/image"!==t||(e.attributes.lightbox={type:"boolean",default:!1},e.attributes.workTitle={type:"string",default:""},e.attributes.workMedium={type:"string",default:""},e.attributes.workDimensions={type:"string",default:""},e.attributes.workDate={type:"string",default:""},e.attributes.workDescription={type:"string",default:""}),e})),n("editor.BlockEdit","bg-custom/add-image-inspector-controls",(function(e){return c(e=>t=>"core/image"!==t.name?Object(o.createElement)(e,t):Object(o.createElement)(i,null,Object(o.createElement)("div",null,Object(o.createElement)(e,t)),Object(o.createElement)(a,null,Object(o.createElement)(l,{title:__("Lightbox Settings","bg-custom")},Object(o.createElement)(s,{label:__("Lightbox Enabled","bg-custom"),checked:t.attributes.lightbox,onChange:e=>t.setAttributes({lightbox:e})}),Object(o.createElement)(u,{label:__("Work Title","bg-custom"),value:t.attributes.workTitle,onChange:e=>t.setAttributes({workTitle:e})}),Object(o.createElement)(u,{label:__("Work Medium","bg-custom"),value:t.attributes.workMedium,onChange:e=>t.setAttributes({workMedium:e})}),Object(o.createElement)(u,{label:__("Work Dimensions","bg-custom"),value:t.attributes.workDimensions,onChange:e=>t.setAttributes({workDimensions:e})}),Object(o.createElement)(u,{label:__("Work Date","bg-custom"),value:t.attributes.workDate,onChange:e=>t.setAttributes({workDate:e})}),Object(o.createElement)(u,{label:__("Work Description","bg-custom"),value:t.attributes.workDescription,onChange:e=>t.setAttributes({workDescription:e})})))))(e)})),n("blocks.getSaveContent.extraProps","bg-custom/add-text-to-element-dataset",(function(e,t,r){return"core/image"!==t.name||(e["data-lightbox-enabled"]=r.lightbox,e["data-work-title"]=r.workTitle,e["data-work-medium"]=r.workMedium,e["data-work-dimensions"]=r.workDimensions,e["data-work-date"]=r.workDate,e["data-work-description"]=r.workDescription),e}))}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/extendImageBlock.js":
+/*!*********************************!*\
+  !*** ./src/extendImageBlock.js ***!
+  \*********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+const {
+  __
+} = wp.i18n;
+const {
+  addFilter
+} = wp.hooks;
+const {
+  Fragment
+} = wp.element;
+const {
+  InspectorControls
+} = wp.blockEditor;
+const {
+  PanelBody,
+  TextControl,
+  ToggleControl
+} = wp.components;
+const {
+  createHigherOrderComponent
+} = wp.compose;
+addFilter("blocks.registerBlockType", "bg-custom/add-works-text", addWorksText);
+addFilter("editor.BlockEdit", "bg-custom/add-image-inspector-controls", addImageInspectorControls);
+addFilter("blocks.getSaveContent.extraProps", "bg-custom/add-text-to-element-dataset", addTextToElementDataset);
+
+function addWorksText(settings, name) {
+  if ("core/image" !== name) {
+    return settings;
+  }
+
+  ;
+  settings.attributes.lightbox = {
+    type: 'boolean',
+    default: false
+  };
+  settings.attributes.workTitle = {
+    type: 'string',
+    default: ''
+  };
+  settings.attributes.workMedium = {
+    type: 'string',
+    default: ''
+  };
+  settings.attributes.workDimensions = {
+    type: 'string',
+    default: ''
+  };
+  settings.attributes.workDate = {
+    type: 'string',
+    default: ''
+  };
+  settings.attributes.workDescription = {
+    type: 'string',
+    default: ''
+  };
+  return settings;
+}
+
+function addImageInspectorControls(BlockEdit) {
+  const withInspectorControls = createHigherOrderComponent(BlockEdit => {
+    return props => {
+      if ("core/image" !== props.name) return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(BlockEdit, props);
+      return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(Fragment, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(BlockEdit, props)), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(InspectorControls, null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(PanelBody, {
+        title: __("Lightbox Settings", "bg-custom")
+      }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(ToggleControl, {
+        label: __("Lightbox Enabled", "bg-custom"),
+        checked: props.attributes.lightbox,
+        onChange: lightbox => props.setAttributes({
+          lightbox
+        })
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(TextControl, {
+        label: __("Work Title", "bg-custom"),
+        value: props.attributes.workTitle,
+        onChange: workTitle => props.setAttributes({
+          workTitle
+        })
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(TextControl, {
+        label: __("Work Medium", "bg-custom"),
+        value: props.attributes.workMedium,
+        onChange: workMedium => props.setAttributes({
+          workMedium
+        })
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(TextControl, {
+        label: __("Work Dimensions", "bg-custom"),
+        value: props.attributes.workDimensions,
+        onChange: workDimensions => props.setAttributes({
+          workDimensions
+        })
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(TextControl, {
+        label: __("Work Date", "bg-custom"),
+        value: props.attributes.workDate,
+        onChange: workDate => props.setAttributes({
+          workDate
+        })
+      }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(TextControl, {
+        label: __("Work Description", "bg-custom"),
+        value: props.attributes.workDescription,
+        onChange: workDescription => props.setAttributes({
+          workDescription
+        })
+      }))));
+    };
+  });
+  return withInspectorControls(BlockEdit);
+}
+
+function addTextToElementDataset(props, type, attributes) {
+  if ("core/image" !== type.name) return props;
+
+  if (attributes.lightbox) {
+    props["data-lightbox-enabled"] = attributes.lightbox;
+    props["data-work-title"] = attributes.workTitle;
+    props["data-work-medium"] = attributes.workMedium;
+    props["data-work-dimensions"] = attributes.workDimensions;
+    props["data-work-date"] = attributes.workDate;
+    props["data-work-description"] = attributes.workDescription;
+  }
+
+  return props;
+}
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _extendImageBlock__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./extendImageBlock */ "./src/extendImageBlock.js");
+
+
+/***/ }),
+
+/***/ "@wordpress/element":
+/*!*********************************!*\
+  !*** external ["wp","element"] ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["wp"]["element"]; }());
+
+/***/ })
+
+/******/ });
+//# sourceMappingURL=index.js.map

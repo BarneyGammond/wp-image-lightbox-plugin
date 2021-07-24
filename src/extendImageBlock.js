@@ -98,11 +98,13 @@ function addImageInspectorControls( BlockEdit ) {
 
 function addTextToElementDataset( props, type, attributes ) {
     if ("core/image" !== type.name) return props;
-    props["data-lightbox-enabled"] = attributes.lightbox;
-    props["data-work-title"] = attributes.workTitle;
-    props["data-work-medium"] = attributes.workMedium;
-    props["data-work-dimensions"] = attributes.workDimensions;
-    props["data-work-date"] = attributes.workDate;
-    props["data-work-description"] = attributes.workDescription;
+    if (attributes.lightbox) {
+        props["data-lightbox-enabled"] = attributes.lightbox;
+        props["data-work-title"] = attributes.workTitle;
+        props["data-work-medium"] = attributes.workMedium;
+        props["data-work-dimensions"] = attributes.workDimensions;
+        props["data-work-date"] = attributes.workDate;
+        props["data-work-description"] = attributes.workDescription;
+    }
     return props
 }

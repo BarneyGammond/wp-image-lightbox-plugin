@@ -79,6 +79,10 @@ const buildLightbox = () => {
 		const next = galleryItems[activeImgCount];
 		img.src = next.firstChild.src;
 		title.textContent = next.dataset.workTitle;
+		medium.textContent = next.dataset.workMedium;
+		dimensions.textContent = next.dataset.workDimensions;
+		year.textContent = next.dataset.workDate;
+		description.textContent = next.dataset.workDescription;
 		if (activeImgCount === 0) {
 			leftArrowWrapper.classList.add('disabled');
 		} else {
@@ -110,9 +114,9 @@ const buildLightbox = () => {
 	Array.from(arrows)[1].addEventListener('click', navToNext);
 	document.addEventListener('keydown', e => {
 		if (lightbox.classList.contains('active')) {
-			if (e.key === 'ArrowLeft' && activeImgCount > 1) {
+			if (e.key === 'ArrowLeft' && activeImgCount > 0) {
 				navToPrev();
-			} else if (e.key === 'ArrowRight' && activeImgCount < galleryItems.length) {
+			} else if (e.key === 'ArrowRight' && activeImgCount < galleryItems.length - 1) {
 				navToNext();
 			}
 		}

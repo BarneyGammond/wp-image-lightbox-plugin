@@ -106,5 +106,5 @@ function addTextToElementDataset( props, type, attributes ) {
         props["data-work-date"] = attributes.workDate;
         props["data-work-description"] = attributes.workDescription;
     }
-    return props
+    return props;
 }

@@ -33,12 +33,6 @@ function enqueue_block_filter_scripts() {
 add_action('wp_enqueue_scripts', 'enqueue_lightbox_scripts');
 add_action('enqueue_block_editor_assets', 'enqueue_block_filter_scripts');
 
-function enqueue_block_mod() {
-    wp_enqueue_script('block_mod_js', plugin_dir_url( __FILE__ ) . 'gallery-block-mod.js');
-}
-
-add_action( 'enqueue_block_editor_assets', 'enqueue_block_mod' );
-
 /**
  * Adds Image gallery inputs
  *
